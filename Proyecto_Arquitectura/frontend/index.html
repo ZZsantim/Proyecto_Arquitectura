@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#123e50">
+    <title>Expediente técnico | Taller</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div>
+        <p class="eyebrow">Taller · Personal autorizado</p>
+        <h1>Expediente técnico</h1>
+      </div>
+      <button id="logout-button" class="button button-quiet" type="button" hidden>
+        Cerrar sesión
+      </button>
+    </header>
+
+    <main>
+      <section id="login-panel" class="panel" aria-labelledby="login-title">
+        <h2 id="login-title">Iniciar sesión</h2>
+        <p>Acceso exclusivo para mecánicos y personal administrador.</p>
+        <form id="login-form" class="form-grid">
+          <label for="username">Usuario</label>
+          <input id="username" name="username" autocomplete="username" required maxlength="80">
+          <label for="password">Contraseña</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required>
+          <button class="button" type="submit">Ingresar</button>
+        </form>
+        <p id="login-message" class="message" role="status" aria-live="polite"></p>
+      </section>
+
+      <section id="record-panel" class="panel" aria-labelledby="search-title" hidden>
+        <h2 id="search-title">Buscar vehículo</h2>
+        <form id="search-form" class="search-form">
+          <label for="serial-number">Número de serie/chasis</label>
+          <div class="search-controls">
+            <input id="serial-number" name="serial_number" required maxlength="64"
+                   autocomplete="off" aria-describedby="search-help">
+            <button class="button" type="submit">Buscar expediente</button>
+          </div>
+          <p id="search-help" class="hint">La búsqueda ignora mayúsculas y espacios externos.</p>
+        </form>
+        <p id="search-message" class="message" role="status" aria-live="polite"></p>
+        <div id="record-content" aria-live="polite"></div>
+      </section>
+    </main>
+    <footer>POC HU-06 · Los datos de demostración son ficticios.</footer>
+  </body>
+</html>
